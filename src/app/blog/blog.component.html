@@ -1,0 +1,17 @@
+<div>
+  <h2>Categories:</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      {{ category.name }}
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Blog posts:</h2>
+  <ul>
+    <li *ngFor="let post of blogPosts">
+      {{ post.slug }}
+    </li>
+  </ul>
+</div>
