@@ -27,8 +27,7 @@ export class BlogComponent implements OnInit {
       error => {
         console.error(error);
         catchError(error);
-      },
-      () => console.log(this.categories)
+      }
     );
   };
 
@@ -40,8 +39,7 @@ export class BlogComponent implements OnInit {
       error => {
         console.error(error);
         catchError(error);
-      },
-      () => console.log(this.blogPosts)
+      }
     );
   };
 }

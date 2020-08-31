@@ -10,12 +10,12 @@ export class JobService {
   constructor(private http: HttpClient) {}
   fetchJobs = (): Observable<Object> => {
     return this.http
-      .get('http://localhost:8000/jobs_all/')
+      .get('http://localhost:8000/api/jobs_all/')
       .pipe(retry(1), debounceTime(500));
   };
   fetchJob = (id: number): Observable<Object> => {
     return this.http
-      .get(`http://localhost:8000/jobs_one/${id}`)
+      .get(`http://localhost:8000/api/jobs_one/${id}`)
       .pipe(retry(1), debounceTime(500));
   };
 }

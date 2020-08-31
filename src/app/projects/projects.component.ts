@@ -25,8 +25,7 @@ export class ProjectsComponent implements OnInit {
       error => {
         console.error(error);
         catchError(error);
-      },
-      () => console.log(this.projects)
+      }
     );
   };
 }

@@ -26,7 +26,6 @@ export class JobsComponent implements OnInit {
       error => {
         console.error(error);
         catchError(error);
-      },
-      () => console.log(this.jobs)
+      }
     );
 }
