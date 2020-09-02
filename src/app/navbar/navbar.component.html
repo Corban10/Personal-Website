@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="nav-center">
+    <div class="nav-header">
+      <img src="" alt="logo" />
+      <ul class="page-link {{ linkClass }}">
+        <li *ngFor="let pageLink of links">
+          <a routerLink="{{ pageLink.url }}">{{ pageLink.text }} </a>
+        </li>
+      </ul>
+      <button class="toggle-btn"></button>
+    </div>
+  </div>
+</nav>

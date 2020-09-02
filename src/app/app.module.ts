@@ -14,9 +14,21 @@ import { JobService } from './services/job.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, ProjectsComponent, BlogComponent, JobsComponent, HomeComponent, AboutComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    ProjectsComponent,
+    BlogComponent,
+    JobsComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    NavbarComponent,
+    SidebarComponent
+  ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [ProjectService, BlogService, JobService],
   bootstrap: [AppComponent]
