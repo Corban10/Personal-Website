@@ -1,13 +1,14 @@
 <nav class="navbar">
   <div class="nav-center">
-    <div class="nav-header">
-      <img src="" alt="logo" />
-      <ul class="page-link {{ linkClass }}">
-        <li *ngFor="let pageLink of links">
-          <a routerLink="{{ pageLink.url }}">{{ pageLink.text }} </a>
-        </li>
-      </ul>
-      <button class="toggle-btn"></button>
-    </div>
+    <a href="/" class="nav-brand">Hi</a>
+    <ul class="page-links {{ isMobile && 'side-links' }}">
+      <li
+        class="page-link {{ isMobile && 'side-links' }}"
+        *ngFor="let pageLink of links"
+      >
+        <a routerLink="{{ pageLink.url }}">{{ pageLink.text }} </a>
+      </li>
+    </ul>
+    <button class="toggle-btn {{ !isMobile && 'disable-btn' }}">menu</button>
   </div>
 </nav>

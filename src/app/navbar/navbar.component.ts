@@ -8,11 +8,11 @@ import { links } from '../links';
 })
 export class NavbarComponent implements OnInit {
   links: {}[];
-  linkClass: string;
+  isMobile: boolean;
   constructor() {}
 
   ngOnInit(): void {
     this.links = links;
-    this.linkClass = 'test';
+    this.isMobile = true;
   }
 }
