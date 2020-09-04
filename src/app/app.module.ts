@@ -21,7 +21,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   declarations: [
     AppComponent,
     ProjectsComponent,
-    BlogComponent,
+    // BlogComponent,
     JobsComponent,
     HomeComponent,
     AboutComponent,

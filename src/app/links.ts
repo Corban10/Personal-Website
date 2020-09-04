@@ -7,10 +7,10 @@ export const links = [
     text: 'About',
     url: '/about'
   },
-  {
-    text: 'Blog',
-    url: '/blog'
-  },
+  // {
+  //   text: 'Blog',
+  //   url: '/blog'
+  // },
   {
     text: 'Projects',
     url: '/projects'
