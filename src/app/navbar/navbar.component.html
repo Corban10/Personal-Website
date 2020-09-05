@@ -1,13 +1,35 @@
-<nav class="navbar">
-  <div class="nav-center">
-    <ul class="page-links {{ isMobile && 'side-links' }}">
-      <li
-        class="page-link {{ isMobile && 'side-links' }}"
-        *ngFor="let pageLink of links"
-      >
-        <a routerLink="{{ pageLink.url }}">{{ pageLink.text }} </a>
-      </li>
-    </ul>
-    <button class="toggle-btn {{ !isMobile && 'disable-btn' }}">menu</button>
-  </div>
+<nav class="container nav-center">
+  <ul
+    class="{{ themeToggleService.getTheme() }} {{
+      !isMobile ? 'page-links' : 'side-links'
+    }} {{ menuToggled ? 'wide' : '' }}"
+  >
+    <a
+      href="javascript:void(0)"
+      class="close-btn {{ menuToggled && isMobile ? '' : 'disable-btn' }} {{
+        themeToggleService.getTheme()
+      }}"
+      (click)="toggleMenu()"
+      >&times;</a
+    >
+    <li
+      class=" {{ !isMobile ? 'page-link' : 'side-link' }}"
+      *ngFor="let pageLink of links"
+    >
+      <a
+        class="{{ themeToggleService.getTheme() }}"
+        (click)="toggleMenu()"
+        routerLink="{{ pageLink.url }}"
+        >{{ pageLink.text }}
+      </a>
+    </li>
+  </ul>
+  <button
+    (click)="toggleMenu()"
+    class="{{ !isMobile ? 'disable-btn' : 'sidebar-toggle-btn' }} {{
+      themeToggleService.getTheme()
+    }}"
+  >
+    &#9776;
+  </button>
 </nav>

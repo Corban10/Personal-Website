@@ -1,9 +1,4 @@
-.navbar {
-  display: block;
-  margin: 32px auto;
-  padding: 8px;
-  max-width: 650px;
-}
+@import "../../theme";
 
 .nav-center {
   padding: 8px;
@@ -15,25 +10,9 @@
 
 a {
   text-decoration: none;
-  color: black;
 }
 
-.nav-brand {
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  // align-self: center;
-  // justify-self: center;
-}
-
-.page-link {
-  list-style-type: none;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
+// links
 .page-links {
   flex: 1;
   display: flex;
@@ -41,23 +20,87 @@ a {
   justify-content: center;
 }
 
-.toggle-btn {
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
+.page-link {
+  list-style-type: none;
+  margin-left: 8px;
+  margin-right: 8px;
+  a:hover {
+    color: $grey;
+  }
+}
+
+.side-links {
+  position: fixed;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: width 0.4s;
+  padding: 0;
+  padding-top: 64px;
+  margin: 0;
+}
+.side-links li //, a
+ {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
+  font-size: 24px;
+  display: block;
+  transition: width 0.2s;
+}
+
+@media screen and (max-height: 450px) {
+  .side-links {
+    padding-top: 15px;
+  }
+  .side-links a {
+    font-size: 18px;
+  }
+}
+
+.side-link {
+  display: none;
+  a:hover {
+    color: $grey;
+  }
+}
+
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  outline-color: $grey;
+  outline: none;
 }
 
 .disable-btn {
   display: none;
 }
 
-.side-links {
-  display: none;
+.wide {
+  width: 100%;
 }
 
-.side-link {
-  display: none;
+.side-links .close-btn {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  font-size: 36px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
 }

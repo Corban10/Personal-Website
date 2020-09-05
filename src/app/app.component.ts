@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeToggleService } from './services/theme-toggle.service';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  darkMode: boolean;
-  constructor() {}
-  checkValue() {
-    this.darkMode = !this.darkMode;
-    console.log(this.darkMode);
-  }
+  constructor(public themeToggleService: ThemeToggleService) {}
 }
