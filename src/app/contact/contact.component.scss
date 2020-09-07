@@ -1,0 +1,51 @@
+@import "../../theme";
+
+.contact-form {
+  margin-top: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.form-error {
+  margin: 8px;
+  margin-left: 0;
+  color: red;
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-submit-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dark-btn {
+  @extend .form-submit-btn;
+  background-color: $dark;
+  color: $light;
+  &:hover {
+    background-color: lighten($dark, 20);
+  }
+}
+
+.light-btn {
+  @extend .form-submit-btn;
+  background-color: $light;
+  color: $dark;
+  &:hover {
+    background-color: darken($light, 20);
+  }
+}
