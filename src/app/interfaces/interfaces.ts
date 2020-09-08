@@ -15,6 +15,12 @@ export interface IJob extends ITimeStamped {
   date_end: Date;
 }
 
+export interface ISkill {
+  pk: number;
+  name: string;
+  icon: string;
+}
+
 export interface ICategory extends ITimeStamped {
   pk: number;
   name: string;

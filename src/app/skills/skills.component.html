@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>Skills:</h2>
+  <svg-icon
+    *ngFor="let skill of skills"
+    src="{{ skill.icon }}"
+    [svgStyle]="{ 'width.px': 64 }"
+  ></svg-icon>
+</div>
