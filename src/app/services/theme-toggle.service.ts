@@ -5,9 +5,10 @@ import randomColor from '../helpers/color';
   providedIn: 'root'
 })
 export class ThemeToggleService {
-  darkMode: boolean;
+  darkMode: boolean = true;
   constructor() {
     this.initTheme();
+    this.setTitleColours();
     setInterval(() => {
       this.setTitleColours();
     }, 1000);

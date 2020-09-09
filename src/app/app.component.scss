@@ -22,7 +22,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $dark;
+  background-color: $light;
   -webkit-transition: translate 0.4s;
   -moz-transition: translate 0.4s;
   transition: translate 0.4s;
@@ -33,7 +33,7 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: $light;
+    background-color: $dark;
     -webkit-transition: transform 0.4s;
     -moz-transition: transform 0.4s;
     transition: transform 0.4s;
@@ -41,13 +41,13 @@
 }
 
 input:checked + .slider {
-  background-color: $light;
+  background-color: $dark;
   &:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     -moz-transform: translateX(26px);
     transform: translateX(26px);
-    background-color: $dark;
+    background-color: $light;
   }
 }
 
