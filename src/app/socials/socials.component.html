@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Socials</h2>
+  <h5 (click)="toggleViewOpen()">Socials</h5>
   <a target="_blank" *ngFor="let social of socials" href="{{ social.link }}">
     <svg-icon
       src="{{ social.icon }}"

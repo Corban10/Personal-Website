@@ -5,13 +5,41 @@ body {
   margin: 0;
   font-family: "Roboto Mono", Monospace, Arial, "Helvetica Neue", Helvetica,
     sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
 }
 
-.main {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  padding-top: 16px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.75rem;
 }
 
 .dark-mode {
@@ -36,14 +64,15 @@ body {
   }
 }
 
+.main {
+  width: 100%;
+  margin: 64px auto;
+}
+
 .container {
   display: block;
   margin: 32px auto;
-  padding: 32px;
-  padding-top: 8px;
-  max-width: 640px;
-}
-
-div {
-  display: block;
+  max-width: 500px;
+  padding-left: 8px;
+  padding-right: 8px;
 }

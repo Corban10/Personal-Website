@@ -23,8 +23,17 @@ export class SocialsComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  initSocials = (): Subscription =>
-    this.service.fetchSocials().subscribe(
+
+  toggleViewOpen() {
+    // const divs = document.querySelectorAll('#drawer');
+    // divs.forEach(element => {
+    //   const div = element as HTMLAnchorElement;
+    //   div.classList.toggle('isOpen');
+    // });
+  }
+
+  initSocials(): Subscription {
+    return this.service.fetchSocials().subscribe(
       (response: any) => {
         this.socials = response.map(res => res.fields);
         this.socials.forEach((social: ISocial) => {
@@ -36,4 +45,5 @@ export class SocialsComponent implements OnInit {
         catchError(error);
       }
     );
+  }
 }

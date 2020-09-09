@@ -1,9 +1,7 @@
 .pic {
-  width: 180px;
+  max-width: 300px;
   height: auto;
   justify-self: center;
-}
-
-.container {
-  padding-top: 8px;
+  margin-top: 16px;
+  border-radius: 50%;
 }
