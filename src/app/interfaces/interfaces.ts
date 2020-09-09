@@ -21,6 +21,8 @@ export interface ISkill {
   icon: string;
 }
 
+export interface ISocial extends ISkill {}
+
 export interface ICategory extends ITimeStamped {
   pk: number;
   name: string;

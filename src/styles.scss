@@ -17,17 +17,23 @@ body {
 .dark-mode {
   background-color: $dark;
   color: $light;
-  // @extend .theme-transition;
+  svg {
+    fill: $light;
+  }
+  svg:hover {
+    fill: $grey;
+  }
 }
 
 .light-mode {
   background-color: $light;
   color: $dark;
-  // @extend .theme-transition;
-}
-
-.theme-transition {
-  transition: color 0.5s, background 0.5s;
+  svg {
+    fill: $dark;
+  }
+  svg:hover {
+    fill: $grey;
+  }
 }
 
 .container {

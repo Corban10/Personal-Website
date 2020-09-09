@@ -20,6 +20,7 @@ import { BlogService } from './services/blog.service';
 import { JobService } from './services/job.service';
 import { ThemeToggleService } from './services/theme-toggle.service';
 import { SkillService } from './services/skill.service';
+import { SocialsComponent } from './socials/socials.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SkillService } from './services/skill.service';
     AboutComponent,
     ContactComponent,
     NavbarComponent,
-    SkillsComponent
+    SkillsComponent,
+    SocialsComponent
   ],
   imports: [
     BrowserModule,

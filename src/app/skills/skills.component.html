@@ -1,8 +1,6 @@
 <div class="container">
-  <h2>Skills:</h2>
-  <svg-icon
-    *ngFor="let skill of skills"
-    src="{{ skill.icon }}"
-    [svgStyle]="{ 'width.px': 64 }"
-  ></svg-icon>
+  <h2>Skills</h2>
+  <a target="_blank" *ngFor="let skill of skills" href="{{ skill.link }}">
+    <svg-icon src="{{ skill.icon }}" [svgStyle]="{ 'width.px': 32 }"></svg-icon>
+  </a>
 </div>

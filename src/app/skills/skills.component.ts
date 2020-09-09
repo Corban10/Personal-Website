@@ -17,12 +17,12 @@ export class SkillsComponent implements OnInit {
     private service: SkillService,
     private iconReg: SvgIconRegistryService
   ) {
-    this.initJobs();
+    this.initSkills();
   }
 
   ngOnInit(): void {}
 
-  initJobs = (): Subscription =>
+  initSkills = (): Subscription =>
     this.service.fetchSkills().subscribe(
       (response: any) => {
         this.skills = response.map(res => res.fields);

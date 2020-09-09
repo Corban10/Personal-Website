@@ -21,4 +21,7 @@ export class ThemeToggleService {
   getTheme() {
     return this.darkMode ? 'dark-mode' : 'light-mode';
   }
+  getOppositeTheme() {
+    return !this.darkMode ? 'dark-mode' : 'light-mode';
+  }
 }

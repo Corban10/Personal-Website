@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Socials</h2>
+  <a target="_blank" *ngFor="let social of socials" href="{{ social.link }}">
+    <svg-icon
+      src="{{ social.icon }}"
+      [svgStyle]="{ 'width.px': 32 }"
+    ></svg-icon>
+  </a>
+</div>
