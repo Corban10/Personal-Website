@@ -1,5 +1,5 @@
 export interface IProject extends ITimeStamped {
-  pk: number;
+  id: number;
   description: string;
   github: string;
   url: string;
@@ -9,12 +9,12 @@ export interface IProject extends ITimeStamped {
 }
 
 export interface IImage {
-  pk: number;
+  id: number;
   image: string;
 }
 
 export interface IJob extends ITimeStamped {
-  pk: number;
+  id: number;
   company: string;
   position: string;
   date_start: Date;
@@ -22,7 +22,7 @@ export interface IJob extends ITimeStamped {
 }
 
 export interface ISkill {
-  pk: number;
+  id: number;
   name: string;
   icon: string;
 }
@@ -30,12 +30,12 @@ export interface ISkill {
 export interface ISocial extends ISkill {}
 
 export interface ICategory extends ITimeStamped {
-  pk: number;
+  id: number;
   name: string;
 }
 
 export interface IBlogPost extends ITimeStamped {
-  pk: number;
+  id: number;
   content: string;
   slug: string;
   desc: string;
