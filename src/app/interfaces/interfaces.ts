@@ -5,7 +5,7 @@ export interface IProject extends ITimeStamped {
   url: string;
   featured: boolean;
   date: Date;
-  image: IImage;
+  images: [IImage];
 }
 
 export interface IImage {

@@ -41,7 +41,6 @@ export class SocialsComponent implements OnInit {
         });
       },
       error => {
-        console.error(error);
         catchError(error);
       }
     );

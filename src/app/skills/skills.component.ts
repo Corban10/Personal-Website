@@ -31,7 +31,6 @@ export class SkillsComponent implements OnInit {
         });
       },
       error => {
-        console.error(error);
         catchError(error);
       }
     );

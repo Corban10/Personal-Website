@@ -25,7 +25,6 @@ export class BlogComponent implements OnInit {
         this.categories = response.map(res => res.fields);
       },
       error => {
-        console.error(error);
         catchError(error);
       }
     );
@@ -37,7 +36,6 @@ export class BlogComponent implements OnInit {
         this.blogPosts = response.map(res => res.fields);
       },
       error => {
-        console.error(error);
         catchError(error);
       }
     );

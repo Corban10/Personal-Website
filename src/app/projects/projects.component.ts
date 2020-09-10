@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../services/project.service';
-import { IProject } from '../interfaces/interfaces';
+import { IProject, IImage } from '../interfaces/interfaces';
 import { catchError } from 'rxjs/operators';
 
 @Component({
@@ -20,17 +20,32 @@ export class ProjectsComponent implements OnInit {
   getProjects = (): void => {
     this.service.fetchProjects().subscribe(
       (response: any) => {
-        this.projects = response.map(res => {
-          return res.fields;
-        });
-        this.projects.forEach((project: IProject) => {
-          project.image.image = `http://localhost:8000/api/media/${project.image.image}`;
+        this.projects = response.map((project: IProject) => {
+          project.images.map(image => {
+            image.image = `http://localhost:8000/api/media/${image.image}`;
+            return image;
+          });
+          project.images = project.images;
+          return project;
         });
       },
       error => {
-        console.error(error);
         catchError(error);
       }
     );
   };
+
+  disableUrlClick(project: IProject): void {
+    if (!project.url) {
+      event.preventDefault();
+    }
+  }
+  disableGithubClick(project: IProject): void {
+    if (!project.github) {
+      event.preventDefault();
+    }
+  }
+  getUrl(image: IImage) {
+    return { 'background-image': image.image };
+  }
 }
