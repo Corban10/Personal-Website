@@ -5,6 +5,12 @@ export interface IProject extends ITimeStamped {
   url: string;
   featured: boolean;
   date: Date;
+  image: IImage;
+}
+
+export interface IImage {
+  pk: number;
+  image: string;
 }
 
 export interface IJob extends ITimeStamped {
@@ -36,6 +42,7 @@ export interface IBlogPost extends ITimeStamped {
   date: Date;
   category: number;
   categoryView?: ICategory;
+  image: IImage;
 }
 
 export interface ITimeStamped {

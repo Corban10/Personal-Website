@@ -20,7 +20,12 @@ export class ProjectsComponent implements OnInit {
   getProjects = (): void => {
     this.service.fetchProjects().subscribe(
       (response: any) => {
-        this.projects = response.map(res => res.fields);
+        this.projects = response.map(res => {
+          return res.fields;
+        });
+        this.projects.forEach((project: IProject) => {
+          project.image.image = `http://localhost:8000/api/media/${project.image.image}`;
+        });
       },
       error => {
         console.error(error);
