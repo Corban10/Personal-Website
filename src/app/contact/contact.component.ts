@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeToggleService } from '../services/theme-toggle.service';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-contact',
@@ -27,9 +28,45 @@ export class ContactComponent implements OnInit {
     return re.test(String(email).toLowerCase());
   }
 
+  resetForm(alertMsg: string) {
+    this.name = undefined;
+    this.email = undefined;
+    this.message = undefined;
+    alert(alertMsg);
+    // location.reload();
+  }
+
+  getPostBody = (): any => {
+    return {
+      name: this.name,
+      email: this.email,
+      message: this.message
+    };
+  };
+
+  getFormData = (): any => {
+    let formData = new FormData();
+    formData.append('name', this.name);
+    formData.append('email', this.email);
+    formData.append('message', this.message);
+    console.log(formData);
+    return formData;
+  };
+
   processForm() {
-    const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
-    if (this.validateForm()) alert(allInfo);
-    else alert('fail');
+    const formData = this.getFormData();
+    fetch('http://127.0.0.1:8000/api/email/', {
+      method: 'POST',
+      body: formData
+    })
+      .then(res => {
+        if (res.ok) {
+          this.resetForm('Sent! Thank you.');
+        } else throw res;
+      })
+      .catch(error => {
+        this.resetForm("Error, couldn't be sent");
+        catchError(error);
+      });
   }
 }
