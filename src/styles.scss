@@ -66,13 +66,19 @@ h6 {
 
 .main {
   width: 100%;
-  margin: 64px auto;
+  margin: 80px auto;
 }
 
 .container {
   display: block;
   margin: 32px auto;
-  max-width: 500px;
   padding-left: 16px;
   padding-right: 16px;
+  max-width: 480px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
 }

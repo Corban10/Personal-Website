@@ -49,7 +49,6 @@ export class ContactComponent implements OnInit {
     formData.append('name', this.name);
     formData.append('email', this.email);
     formData.append('message', this.message);
-    console.log(formData);
     return formData;
   };
 

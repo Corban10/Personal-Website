@@ -1,6 +1,6 @@
 .pic {
   max-width: 150px;
-  margin-left: 16px;
+  margin-right: 16px;
   justify-self: flex-end;
   border-radius: 4px;
 }
@@ -10,11 +10,12 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  h3 {
-    margin-top: 0;
-  }
+  width: 100%;
 }
 
 .header-text {
-  max-width: 150px;
+  max-width: auto;
+  h3 {
+    margin: 0;
+  }
 }
