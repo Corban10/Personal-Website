@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { ISocial } from '../interfaces/interfaces';
 import { catchError } from 'rxjs/operators';
 import { ThemeToggleService } from '../services/theme-toggle.service';
+import url from '../helpers/url';
 
 @Component({
   selector: 'app-socials',
@@ -37,7 +38,7 @@ export class SocialsComponent implements OnInit {
       (response: any) => {
         this.socials = response.map(res => res.fields);
         this.socials.forEach((social: ISocial) => {
-          social.icon = `http://localhost:8000/api/media/${social.icon}`;
+          social.icon = `${url}/api/media/${social.icon}`;
         });
       },
       error => {

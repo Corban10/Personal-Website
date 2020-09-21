@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeToggleService } from '../services/theme-toggle.service';
 import { catchError } from 'rxjs/operators';
+import url from '../helpers/url';
 
 @Component({
   selector: 'app-contact',
@@ -54,7 +55,7 @@ export class ContactComponent implements OnInit {
 
   processForm() {
     const formData = this.getFormData();
-    fetch('http://127.0.0.1:8000/api/email/', {
+    fetch(`${url}/api/email/`, {
       method: 'POST',
       body: formData
     })

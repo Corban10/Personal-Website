@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { ISkill } from '../interfaces/interfaces';
 import { SkillService } from '../services/skill.service';
 import { SvgIconRegistryService } from 'angular-svg-icon';
+import url from '../helpers/url';
 
 @Component({
   selector: 'app-skills',
@@ -27,7 +28,7 @@ export class SkillsComponent implements OnInit {
       (response: any) => {
         this.skills = response.map(res => res.fields);
         this.skills.forEach((skill: ISkill) => {
-          skill.icon = `http://localhost:8000/api/media/${skill.icon}`;
+          skill.icon = `${url}/api/media/${skill.icon}`;
         });
       },
       error => {

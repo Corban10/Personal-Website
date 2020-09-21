@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../services/project.service';
 import { IProject, IImage } from '../interfaces/interfaces';
 import { catchError } from 'rxjs/operators';
+import url from '../helpers/url';
 
 @Component({
   selector: 'app-projects',
@@ -23,7 +24,7 @@ export class ProjectsComponent implements OnInit {
         console.log(response);
         this.projects = response.map((project: IProject) => {
           project.images.map(image => {
-            image.image = `http://localhost:8000/api/media/${image.image}`;
+            image.image = `${url}/api/media/${image.image}`;
             return image;
           });
           project.images = project.images;
